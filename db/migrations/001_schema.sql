@@ -180,8 +180,10 @@ CREATE TABLE journal_lines (
     line_no      INT           NOT NULL
 );
 
-CREATE INDEX idx_org_members_user  ON org_members(user_id);
-CREATE INDEX idx_org_members_org   ON org_members(org_id);
+CREATE INDEX idx_org_members_user    ON org_members(user_id);
+CREATE INDEX idx_org_members_org     ON org_members(org_id);
+CREATE INDEX idx_roles_org           ON roles(org_id);
+CREATE INDEX idx_refresh_tokens_user ON refresh_tokens(user_id);
 CREATE INDEX idx_invoices_org_status ON invoices(org_id, status);
 CREATE INDEX idx_bills_org_status    ON bills(org_id, status);
 CREATE INDEX idx_payments_ref        ON payments(reference_id);
